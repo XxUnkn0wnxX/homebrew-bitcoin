@@ -1,14 +1,17 @@
-class Bitcoind < Formula
+class Bitcoinxt < Formula
   desc "A decentralized, peer to peer payment network"
-  homepage "https://bitcoin.org/"
-  url "https://github.com/bitcoin/bitcoin/archive/v0.11.2.tar.gz"
-  sha256 "aab2cd0c4f045970d259cf9fcee5785b43180d20ccbbedc1f90480e697696b25"
+  homepage "https://bitcoinxt.software/"
+  url "https://github.com/bitcoinxt/bitcoinxt/archive/v0.11D.tar.gz"
+  version "0.11D"
+  sha256 "66b4bd52ed8b97e28da46ac552396c40853a9d7f765063603552e1cf118a2227"
 
   head do
-    url "https://github.com/bitcoin/bitcoin.git"
+    url "https://github.com/bitcoinxt/bitcoinxt.git"
 
     depends_on "libevent"
   end
+
+  conflicts_with "bitcoind", :because => "bitcoind also ships a bitcoind binary"
 
   option "with-gui", "Build the GUI client (requires Qt5)"
 
